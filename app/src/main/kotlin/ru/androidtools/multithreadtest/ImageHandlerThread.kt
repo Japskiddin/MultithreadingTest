@@ -6,7 +6,6 @@ import android.os.Handler
 import android.os.HandlerThread
 import java.io.BufferedInputStream
 import java.io.IOException
-import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.concurrent.ConcurrentHashMap
@@ -59,14 +58,16 @@ class ImageHandlerThread<T : Any>(
 
     private fun loadImage(link: String): Bitmap? {
         val url = URL(link)
+        var connection: HttpURLConnection? = null
         return try {
-            val connection: HttpURLConnection = url.openConnection() as HttpURLConnection
+            connection = url.openConnection() as HttpURLConnection
             connection.connect()
-            val inputStream: InputStream = connection.inputStream
-            val bufferedInputStream = BufferedInputStream(inputStream)
+            val bufferedInputStream = BufferedInputStream(connection.inputStream)
             BitmapFactory.decodeStream(bufferedInputStream)
         } catch (e: IOException) {
             null
+        } finally {
+            connection?.disconnect()
         }
     }
 
