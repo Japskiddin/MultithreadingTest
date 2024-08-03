@@ -113,7 +113,7 @@ class MainActivity : AppCompatActivity() {
 
         thread(name = "Test Thread 2") {
             Thread.sleep(3000)
-            val message = Message().apply {
+            val message = Message.obtain().apply {
                 obj = currentThread().name
             }
             looperThread.handler.sendMessage(message)
