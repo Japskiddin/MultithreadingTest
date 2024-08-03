@@ -2,6 +2,7 @@ package ru.androidtools.multithreadtest
 
 import android.os.Bundle
 import android.os.Handler
+import android.os.HandlerThread
 import android.os.Looper
 import android.os.Message
 import android.widget.Toast
@@ -24,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         // createThread()
-        createThreadWithLooper()
+        // createThreadWithLooper()
+        createHandlerThread()
     }
 
     /**
@@ -78,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         /* Четвёртый способ */
         thread(name = "Test Thread") {
             Thread.sleep(5000)
-            val name = Thread.currentThread().name
+            val name = currentThread().name
             runOnUiThread {
                 Toast.makeText(this, "Hello from $name", Toast.LENGTH_SHORT).show()
             }
@@ -117,6 +119,28 @@ class MainActivity : AppCompatActivity() {
                 obj = currentThread().name
             }
             looperThread.handler.sendMessage(message)
+        }
+    }
+
+    private fun createHandlerThread() {
+        val handlerThread = HandlerThread("Test Handler Thread")
+        handlerThread.start()
+        val handler = Handler(handlerThread.looper) { message ->
+            val messageName = message.obj as String
+            Toast.makeText(
+                this@MainActivity,
+                "${currentThread().name} send hello from $messageName",
+                Toast.LENGTH_SHORT
+            ).show()
+            true
+        }
+
+        thread(name = "Test Thread 2") {
+            Thread.sleep(3000)
+            val message = Message.obtain().apply {
+                obj = currentThread().name
+            }
+            handler.sendMessage(message)
         }
     }
 }
