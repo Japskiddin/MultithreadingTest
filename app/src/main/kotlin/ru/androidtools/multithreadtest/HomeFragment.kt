@@ -31,6 +31,9 @@ class HomeFragment : Fragment() {
         binding.btnSimpleThreads.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_SimpleThreadFragment)
         }
+        binding.btnHandlerThread.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_HandlerThreadFragment)
+        }
     }
 
     override fun onDestroyView() {

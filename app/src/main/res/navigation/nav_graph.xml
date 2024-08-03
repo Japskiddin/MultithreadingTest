@@ -14,6 +14,10 @@
         <action
             android:id="@+id/action_HomeFragment_to_SimpleThreadFragment"
             app:destination="@id/SimpleThreadFragment" />
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HandlerThreadFragment"
+            app:destination="@id/HandlerThreadFragment" />
     </fragment>
 
     <fragment
@@ -21,5 +25,11 @@
         android:name="ru.androidtools.multithreadtest.SimpleThreadFragment"
         android:label="Simple thread"
         tools:layout="@layout/fragment_simple_thread" />
+
+    <fragment
+        android:id="@+id/HandlerThreadFragment"
+        android:name="ru.androidtools.multithreadtest.HandlerThreadFragment"
+        android:label="Handler thread"
+        tools:layout="@layout/fragment_handler_thread" />
 
 </navigation>
