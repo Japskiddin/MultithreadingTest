@@ -1,0 +1,2 @@
+# MultithreadingTest
+Пример для статьи.
