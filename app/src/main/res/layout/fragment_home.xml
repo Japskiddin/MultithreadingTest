@@ -24,11 +24,22 @@
         android:id="@+id/btn_handler_thread"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Simple Threads"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="HandlerThread"
+        app:layout_constraintBottom_toTopOf="@id/btn_asynctask"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_simple_threads"
+        />
+
+    <Button
+        android:id="@+id/btn_asynctask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AsyncTask"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_handler_thread"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
