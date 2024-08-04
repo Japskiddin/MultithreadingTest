@@ -71,7 +71,7 @@ class ImageHandlerThread<T : Any>(
         }
     }
 
-    companion object {
+    private companion object {
         const val MESSAGE_DOWNLOAD = 101
     }
 }
