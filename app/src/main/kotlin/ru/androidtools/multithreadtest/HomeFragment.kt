@@ -34,6 +34,9 @@ class HomeFragment : Fragment() {
         binding.btnHandlerThread.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_HandlerThreadFragment)
         }
+        binding.btnSimpleAsynctask.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_SimpleAsyncTaskFragment)
+        }
     }
 
     override fun onDestroyView() {

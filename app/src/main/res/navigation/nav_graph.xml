@@ -18,6 +18,10 @@
         <action
             android:id="@+id/action_HomeFragment_to_HandlerThreadFragment"
             app:destination="@id/HandlerThreadFragment" />
+
+        <action
+            android:id="@+id/action_HomeFragment_to_SimpleAsyncTaskFragment"
+            app:destination="@id/SimpleAsyncTaskFragment" />
     </fragment>
 
     <fragment
@@ -31,5 +35,11 @@
         android:name="ru.androidtools.multithreadtest.HandlerThreadFragment"
         android:label="Handler thread"
         tools:layout="@layout/fragment_handler_thread" />
+
+    <fragment
+        android:id="@+id/SimpleAsyncTaskFragment"
+        android:name="ru.androidtools.multithreadtest.SimpleAsyncTaskFragment"
+        android:label="Simple AsyncTask"
+        tools:layout="@layout/fragment_simple_async_task" />
 
 </navigation>
