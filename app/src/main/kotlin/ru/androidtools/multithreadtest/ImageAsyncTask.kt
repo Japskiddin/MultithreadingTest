@@ -58,10 +58,12 @@ class ImageAsyncTask(
             val bufferSize = 512
             val tempBuffer = ByteArray(bufferSize)
             var bytesRead: Int
+            var downloadedSize: Int = 0
             while (inputStream.read(tempBuffer, 0, bufferSize).also { bytesRead = it } != -1) {
                 buffer.write(tempBuffer, 0, bytesRead)
+                downloadedSize += bytesRead
                 if (totalSize > 0) {
-                    publishProgress((bytesRead * 100) / totalSize)
+                    publishProgress((downloadedSize * 100) / totalSize)
                 }
             }
             val array = buffer.toByteArray()

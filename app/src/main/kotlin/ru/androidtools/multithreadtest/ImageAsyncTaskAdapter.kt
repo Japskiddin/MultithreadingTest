@@ -1,5 +1,6 @@
 package ru.androidtools.multithreadtest
 
+import android.app.Activity
 import android.graphics.Bitmap
 import android.view.LayoutInflater
 import android.view.View
@@ -49,7 +50,9 @@ class ImageAsyncTaskAdapter(
                 }
 
                 override fun onProgressUpdated(progress: Int) {
-                    binding.progressLoading.progress = progress
+                    (itemView.context as Activity).runOnUiThread {
+                        binding.progressLoading.progress = progress
+                    }
                 }
 
                 override fun onTaskCompleted(bitmap: Bitmap?) {

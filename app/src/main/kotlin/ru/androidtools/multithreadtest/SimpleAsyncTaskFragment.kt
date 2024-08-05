@@ -57,7 +57,9 @@ class SimpleAsyncTaskFragment : Fragment() {
             override fun onProgressUpdate(vararg values: Int?) {
                 val value = values[0]
                 if (value != null) {
-                    binding.progress.setProgress(value)
+                    requireActivity().runOnUiThread {
+                        binding.progress.setProgress(value)
+                    }
                 }
             }
 
