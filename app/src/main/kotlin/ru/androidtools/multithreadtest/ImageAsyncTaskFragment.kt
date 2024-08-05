@@ -1,53 +1,38 @@
 package ru.androidtools.multithreadtest
 
-import android.graphics.Bitmap
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.androidtools.multithreadtest.databinding.FragmentHandlerThreadBinding
+import ru.androidtools.multithreadtest.databinding.FragmentImageAsyncTaskBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class HandlerThreadFragment : Fragment() {
-    private var _binding: FragmentHandlerThreadBinding? = null
+class ImageAsyncTaskFragment : Fragment() {
+    private var _binding: FragmentImageAsyncTaskBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-    private val imageHandlerThread: ImageHandlerThread<Int> = ImageHandlerThread(
-        Handler(Looper.getMainLooper()),
-        object : ImageHandlerThread.ThreadListener<Int> {
-            override fun onImageDownloaded(target: Int, image: Bitmap) {
-                imageHandlerThreadAdapter.updateItem(target, image)
-            }
-        }
-    )
-    private val imageHandlerThreadAdapter: ImageHandlerThreadAdapter =
-        ImageHandlerThreadAdapter(IMAGES_LIST, imageHandlerThread)
+    private val imagesAdapter: ImageAsyncTaskAdapter = ImageAsyncTaskAdapter(IMAGES_LIST)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        imageHandlerThread.start()
-        _binding = FragmentHandlerThreadBinding.inflate(inflater, container, false)
+        _binding = FragmentImageAsyncTaskBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.rvImages.adapter = imageHandlerThreadAdapter
+        binding.rvImages.adapter = imagesAdapter
         super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        imageHandlerThread.clearQueue()
-        imageHandlerThread.quit()
         _binding = null
     }
 

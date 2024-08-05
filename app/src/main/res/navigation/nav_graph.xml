@@ -22,6 +22,10 @@
         <action
             android:id="@+id/action_HomeFragment_to_SimpleAsyncTaskFragment"
             app:destination="@id/SimpleAsyncTaskFragment" />
+
+        <action
+            android:id="@+id/action_HomeFragment_to_ImageAsyncTaskFragment"
+            app:destination="@id/ImageAsyncTaskFragment" />
     </fragment>
 
     <fragment
@@ -41,5 +45,11 @@
         android:name="ru.androidtools.multithreadtest.SimpleAsyncTaskFragment"
         android:label="Simple AsyncTask"
         tools:layout="@layout/fragment_simple_async_task" />
+
+    <fragment
+        android:id="@+id/ImageAsyncTaskFragment"
+        android:name="ru.androidtools.multithreadtest.ImageAsyncTaskFragment"
+        android:label="Image AsyncTask"
+        tools:layout="@layout/fragment_image_async_task" />
 
 </navigation>

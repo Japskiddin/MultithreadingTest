@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.androidtools.multithreadtest.databinding.ItemImageBinding
 
-class ImagesAdapter(
+class ImageHandlerThreadAdapter(
     private val images: List<String>,
     private val imageHandlerThread: ImageHandlerThread<Int>
-) : RecyclerView.Adapter<ImagesAdapter.ImageHolder>() {
+) : RecyclerView.Adapter<ImageHandlerThreadAdapter.ImageHolder>() {
     override fun getItemCount(): Int = images.count()
 
     override fun onCreateViewHolder(
