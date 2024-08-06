@@ -11,7 +11,7 @@ class ImageAsyncTaskAdapter(
     private val images: List<String>,
 ) : RecyclerView.Adapter<ImageAsyncTaskAdapter.ImageHolder>() {
     /* Для второго способа */
-//    private val executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors())
+//    private val executor = Executors.newFixedThreadPool(5)
 
     override fun getItemCount(): Int = images.count()
 
@@ -31,7 +31,7 @@ class ImageAsyncTaskAdapter(
         position: Int
     ) = holder.bind(images[position])
     /* Для второго способа */
-//    ) = holder.bind(images[position], executorService)
+//    ) = holder.bind(images[position], executor)
 
     class ImageHolder(
         private val binding: ItemImageBinding
@@ -40,7 +40,7 @@ class ImageAsyncTaskAdapter(
     ) {
         fun bind(image: String) {
             /* Для второго способа */
-//        fun bind(image: String, executorService: ExecutorService) {
+//        fun bind(image: String, executor: ExecutorService) {
             binding.progressLoading.isIndeterminate = false
             binding.progressLoading.max = 100
             val asyncTask = ImageAsyncTask(object : ImageAsyncTask.TaskListener {
@@ -60,7 +60,7 @@ class ImageAsyncTaskAdapter(
             asyncTask.execute(image)
 
             /* Для второго способа */
-//            asyncTask.executeOnExecutor(executorService, image)
+//            asyncTask.executeOnExecutor(executor, image)
         }
 
         private fun showProgress() {
