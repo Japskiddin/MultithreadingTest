@@ -26,6 +26,10 @@
         <action
             android:id="@+id/action_HomeFragment_to_ImageAsyncTaskFragment"
             app:destination="@id/ImageAsyncTaskFragment" />
+
+        <action
+            android:id="@+id/action_HomeFragment_to_SimpleLoaderFragment"
+            app:destination="@id/SimpleLoaderFragment" />
     </fragment>
 
     <fragment
@@ -51,5 +55,11 @@
         android:name="ru.androidtools.multithreadtest.ImageAsyncTaskFragment"
         android:label="Image AsyncTask"
         tools:layout="@layout/fragment_image_async_task" />
+
+    <fragment
+        android:id="@+id/SimpleLoaderFragment"
+        android:name="ru.androidtools.multithreadtest.SimpleLoaderFragment"
+        android:label="Simple Loader"
+        tools:layout="@layout/fragment_simple_loader" />
 
 </navigation>

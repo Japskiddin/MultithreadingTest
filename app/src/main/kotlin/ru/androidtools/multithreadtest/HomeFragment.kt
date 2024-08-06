@@ -40,6 +40,9 @@ class HomeFragment : Fragment() {
         binding.btnImageAsynctask.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_ImageAsyncTaskFragment)
         }
+        binding.btnSimpleLoader.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_SimpleLoaderFragment)
+        }
     }
 
     override fun onDestroyView() {
