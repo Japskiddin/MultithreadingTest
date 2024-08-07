@@ -1,4 +1,4 @@
-package ru.androidtools.multithreadtest
+package ru.androidtools.multithreadtest.asynctask
 
 import android.graphics.Bitmap
 import android.view.LayoutInflater

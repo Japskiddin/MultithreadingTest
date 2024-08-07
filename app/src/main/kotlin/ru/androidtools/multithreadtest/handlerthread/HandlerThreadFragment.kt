@@ -1,4 +1,4 @@
-package ru.androidtools.multithreadtest
+package ru.androidtools.multithreadtest.handlerthread
 
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.androidtools.multithreadtest.databinding.FragmentHandlerThreadBinding
+import ru.androidtools.multithreadtest.handlerthread.ImageHandlerThread.ThreadListener
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -21,7 +22,7 @@ class HandlerThreadFragment : Fragment() {
     private val binding get() = _binding!!
     private val imageHandlerThread: ImageHandlerThread<Int> = ImageHandlerThread(
         Handler(Looper.getMainLooper()),
-        object : ImageHandlerThread.ThreadListener<Int> {
+        object : ThreadListener<Int> {
             override fun onImageDownloaded(target: Int, image: Bitmap) {
                 imageHandlerThreadAdapter.updateItem(target, image)
             }

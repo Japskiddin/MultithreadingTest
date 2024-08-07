@@ -1,4 +1,4 @@
-package ru.androidtools.multithreadtest
+package ru.androidtools.multithreadtest.handlerthread
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

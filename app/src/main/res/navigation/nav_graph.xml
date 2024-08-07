@@ -38,31 +38,31 @@
 
     <fragment
         android:id="@+id/SimpleThreadFragment"
-        android:name="ru.androidtools.multithreadtest.SimpleThreadFragment"
+        android:name="ru.androidtools.multithreadtest.thread.SimpleThreadFragment"
         android:label="Simple thread"
         tools:layout="@layout/fragment_simple_thread" />
 
     <fragment
         android:id="@+id/HandlerThreadFragment"
-        android:name="ru.androidtools.multithreadtest.HandlerThreadFragment"
+        android:name="ru.androidtools.multithreadtest.handlerthread.HandlerThreadFragment"
         android:label="Handler thread"
         tools:layout="@layout/fragment_handler_thread" />
 
     <fragment
         android:id="@+id/SimpleAsyncTaskFragment"
-        android:name="ru.androidtools.multithreadtest.SimpleAsyncTaskFragment"
+        android:name="ru.androidtools.multithreadtest.asynctask.SimpleAsyncTaskFragment"
         android:label="Simple AsyncTask"
         tools:layout="@layout/fragment_simple_async_task" />
 
     <fragment
         android:id="@+id/ImageAsyncTaskFragment"
-        android:name="ru.androidtools.multithreadtest.ImageAsyncTaskFragment"
+        android:name="ru.androidtools.multithreadtest.asynctask.ImageAsyncTaskFragment"
         android:label="Image AsyncTask"
         tools:layout="@layout/fragment_image_async_task" />
 
     <fragment
         android:id="@+id/SimpleLoaderFragment"
-        android:name="ru.androidtools.multithreadtest.SimpleLoaderFragment"
+        android:name="ru.androidtools.multithreadtest.loader.SimpleLoaderFragment"
         android:label="Simple Loader"
         tools:layout="@layout/fragment_simple_loader" />
 

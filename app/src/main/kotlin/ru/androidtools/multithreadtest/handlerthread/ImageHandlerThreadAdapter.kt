@@ -1,4 +1,4 @@
-package ru.androidtools.multithreadtest
+package ru.androidtools.multithreadtest.handlerthread
 
 import android.graphics.Bitmap
 import android.view.LayoutInflater
@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.androidtools.multithreadtest.databinding.ItemImageBinding
+import ru.androidtools.multithreadtest.handlerthread.ImageHandlerThreadAdapter.ImageHolder
 
 class ImageHandlerThreadAdapter(
     private val images: List<String>,
     private val imageHandlerThread: ImageHandlerThread<Int>
-) : RecyclerView.Adapter<ImageHandlerThreadAdapter.ImageHolder>() {
+) : RecyclerView.Adapter<ImageHolder>() {
     override fun getItemCount(): Int = images.count()
 
     override fun onCreateViewHolder(

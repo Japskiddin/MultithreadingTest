@@ -1,4 +1,4 @@
-package ru.androidtools.multithreadtest
+package ru.androidtools.multithreadtest.loader
 
 import android.content.ContentValues
 import android.content.Context
