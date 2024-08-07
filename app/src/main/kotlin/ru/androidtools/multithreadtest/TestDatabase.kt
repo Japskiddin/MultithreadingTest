@@ -39,9 +39,10 @@ class TestDatabase(
     ) : SQLiteOpenHelper(context, name, factory, version) {
         override fun onCreate(db: SQLiteDatabase) {
             db.execSQL(DB_CREATE)
-            val cv = ContentValues()
             for (i in 1..4) {
-                cv.put(COLUMN_TXT, "Some text $i")
+                val cv = ContentValues().apply {
+                    put(COLUMN_TXT, "Some message $i")
+                }
                 db.insert(DB_TABLE, null, cv)
             }
         }
@@ -56,7 +57,7 @@ class TestDatabase(
         private const val DB_TABLE = "test_table"
 
         private const val COLUMN_ID = "_id"
-        const val COLUMN_TXT = "txt"
+        const val COLUMN_TXT = "message"
 
         private const val DB_CREATE =
             "create table $DB_TABLE(" +
