@@ -30,6 +30,10 @@
         <action
             android:id="@+id/action_HomeFragment_to_SimpleLoaderFragment"
             app:destination="@id/SimpleLoaderFragment" />
+
+        <action
+            android:id="@+id/action_HomeFragment_to_ExecutorFragment"
+            app:destination="@id/ExecutorFragment" />
     </fragment>
 
     <fragment
@@ -61,5 +65,11 @@
         android:name="ru.androidtools.multithreadtest.SimpleLoaderFragment"
         android:label="Simple Loader"
         tools:layout="@layout/fragment_simple_loader" />
+
+    <fragment
+        android:id="@+id/ExecutorFragment"
+        android:name="ru.androidtools.multithreadtest.executor.ExecutorFragment"
+        android:label="Executor"
+        tools:layout="@layout/fragment_executor" />
 
 </navigation>
