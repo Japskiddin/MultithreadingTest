@@ -7,6 +7,7 @@ import ru.androidtools.multithreadtest.databinding.ItemImageBinding
 
 class ExecutorImagesAdapter(
     private val images: List<String>,
+    private val imageDownloader: ImageDownloader
 ) : RecyclerView.Adapter<ExecutorImagesAdapter.ImageHolder>() {
     override fun getItemCount(): Int = images.count()
 
@@ -24,13 +25,14 @@ class ExecutorImagesAdapter(
     override fun onBindViewHolder(
         holder: ImageHolder,
         position: Int
-    ) = holder.bind(images[position])
+    ) = holder.bind(images[position], imageDownloader)
 
     class ImageHolder(
         private val binding: ItemImageBinding
     ) : RecyclerView.ViewHolder(
         binding.root
     ) {
-        fun bind(image: String) = ImageDownloader.download(image, binding.ivImage, binding.progressLoading)
+        fun bind(image: String, imageDownloader: ImageDownloader) =
+            imageDownloader.download(image, binding.ivImage, binding.progressLoading)
     }
 }

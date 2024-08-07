@@ -12,7 +12,8 @@ import ru.androidtools.multithreadtest.databinding.FragmentExecutorBinding
  */
 class ExecutorFragment : Fragment() {
     private var _binding: FragmentExecutorBinding? = null
-    private val executorImagesAdapter = ExecutorImagesAdapter(IMAGES_LIST)
+    private val imageDownloader = ImageDownloader()
+    private val executorImagesAdapter = ExecutorImagesAdapter(IMAGES_LIST, imageDownloader)
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -33,6 +34,7 @@ class ExecutorFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        imageDownloader.destroy()
         _binding = null
     }
 

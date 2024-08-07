@@ -8,9 +8,14 @@ import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
-object ImageDownloader {
+class ImageDownloader {
     private val executorService: ExecutorService = Executors.newCachedThreadPool()
     private val cache = ConcurrentHashMap<String, Bitmap?>()
+
+    fun destroy() {
+        executorService.shutdown()
+        cache.clear()
+    }
 
     fun download(
         imageUrl: String,
