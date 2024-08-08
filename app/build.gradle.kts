@@ -56,6 +56,7 @@ dependencies {
 
     implementation(libs.material)
     implementation(libs.rxjava)
+    implementation(libs.rxandroid)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
