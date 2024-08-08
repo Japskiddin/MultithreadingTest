@@ -38,6 +38,10 @@
         <action
             android:id="@+id/action_HomeFragment_to_SimpleReactiveFragment"
             app:destination="@id/SimpleReactiveFragment" />
+
+        <action
+            android:id="@+id/action_HomeFragment_to_SimpleCoroutinesFragment"
+            app:destination="@id/SimpleCoroutinesFragment" />
     </fragment>
 
     <fragment
@@ -81,5 +85,11 @@
         android:name="ru.androidtools.multithreadtest.reactive.SimpleReactiveFragment"
         android:label="Simple RxJava"
         tools:layout="@layout/fragment_simple_reactive" />
+
+    <fragment
+        android:id="@+id/SimpleCoroutinesFragment"
+        android:name="ru.androidtools.multithreadtest.coroutines.SimpleCoroutinesFragment"
+        android:label="Simple Coroutines"
+        tools:layout="@layout/fragment_simple_coroutines" />
 
 </navigation>

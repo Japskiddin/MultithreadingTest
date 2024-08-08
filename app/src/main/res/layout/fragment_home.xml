@@ -87,10 +87,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Simple RxJava"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_simple_coroutines"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_executor"
+            />
+
+        <Button
+            android:id="@+id/btn_simple_coroutines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simple Coroutines"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_simple_reactive"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
