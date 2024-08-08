@@ -34,6 +34,10 @@
         <action
             android:id="@+id/action_HomeFragment_to_ExecutorFragment"
             app:destination="@id/ExecutorFragment" />
+
+        <action
+            android:id="@+id/action_HomeFragment_to_SimpleReactiveFragment"
+            app:destination="@id/SimpleReactiveFragment" />
     </fragment>
 
     <fragment
@@ -71,5 +75,11 @@
         android:name="ru.androidtools.multithreadtest.executor.ExecutorFragment"
         android:label="Executor"
         tools:layout="@layout/fragment_executor" />
+
+    <fragment
+        android:id="@+id/SimpleReactiveFragment"
+        android:name="ru.androidtools.multithreadtest.reactive.SimpleReactiveFragment"
+        android:label="Simple RxJava"
+        tools:layout="@layout/fragment_simple_reactive" />
 
 </navigation>

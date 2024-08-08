@@ -46,6 +46,9 @@ class HomeFragment : Fragment() {
         binding.btnExecutor.setOnClickListener {
             findNavController().navigate(R.id.action_HomeFragment_to_ExecutorFragment)
         }
+        binding.btnSimpleReactive.setOnClickListener {
+            findNavController().navigate(R.id.action_HomeFragment_to_SimpleReactiveFragment)
+        }
     }
 
     override fun onDestroyView() {
